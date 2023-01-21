@@ -2,7 +2,8 @@
 
 
 function fiveAndGreaterOnly(arr) {
-  // your code here
+ const filteredNums = arr.filter(num => num > 5)
+ return filteredNums;
 }
 // test
 console.log(fiveAndGreaterOnly([3, 6, 8, 2])); /// [6, 8]
@@ -13,7 +14,8 @@ console.log(fiveAndGreaterOnly([3, 6, 8, 2])); /// [6, 8]
 
 
 function evensOnly(arr) {
-  // your code here
+const evenNums = arr.filter(num => num % 2 === 0)
+return evenNums;
 }
 // test
 console.log(evensOnly([3, 6, 8, 2])); /// [6, 8, 2]
@@ -25,7 +27,8 @@ console.log(evensOnly([3, 6, 8, 2])); /// [6, 8, 2]
 
 
 function fiveCharactersOrFewerOnly(arr) {
-  // your code here
+  const fiveOrLess = arr.filter(word => word.length <= 5 )
+  return fiveOrLess;
 }
 // test
 console.log(fiveCharactersOrFewerOnly(["dog", "wolf", "by", "family", "eaten", "camping"])); // ["by", "dog", "wolf", "eaten"]
@@ -36,7 +39,8 @@ console.log(fiveCharactersOrFewerOnly(["dog", "wolf", "by", "family", "eaten", "
 
 
 function peopleWhoBelongToTheIlluminati(arr){
-  // your code here
+  const members = arr.filter(obj => obj.member === true);
+  return members;
 }
 // test
 console.log(peopleWhoBelongToTheIlluminati([
@@ -55,3 +59,19 @@ console.log(peopleWhoBelongToTheIlluminati([
 
 
 // 5) Make a filtered list of all the people who are old enough to see *The Matrix* (older than 18)**
+
+function ofAge(arr){
+    const oldEnough = arr.filter(obj => obj.age >= 18 )
+    return oldEnough;
+  }
+  // test
+  console.log(ofAge([
+      { name: "Angelina Jolie", age: 80 },
+      { name: "Eric Jones", age: 2 },
+      { name: "Paris Hilton", age: 5 },
+      { name: "Kayne West", age: 16 },
+      { name: "Bob Ziroll", age: 100 }
+  ]));
+  // =>
+  //[ { name: 'Angelina Jolie', age: 80 },
+  //  { name: 'Bob Ziroll', age: 100 } ]
